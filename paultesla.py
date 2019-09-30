@@ -5,9 +5,10 @@ import time
 import os
 import teslajson
 
-password = getpass.getpass('Tesla Password:')
-
-TESLA_EMAIL = "manse@sky.com"
+# Get login details from user
+email = getpass.getpass('Please provide the email address registered to your Tesla account:')
+password = getpass.getpass('Please provide your Tesla account password:')
+TESLA_EMAIL = email
 TESLA_PASSWORD = password
 
 
