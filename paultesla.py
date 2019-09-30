@@ -18,15 +18,13 @@ def establish_connection(token=None):
 
 def get_charge(c, car):
     charge = None
-    for v in c.vehicles:
-        if v["display_name"] == car:
-            charge = v.data_request('charge_state')
-            #charge = int(d["battery_level"])
+    car = c.vehicles[0]
+    charge = car.data_request('charge_state')
     return charge
-
 
 conn = establish_connection()
 print("Thank you for logging in, we are checking your Tesla...")
+
 while True:
     #n = raw_input("Type 'exit' to end:")
     chargeState = get_charge(conn, "Rocket")
